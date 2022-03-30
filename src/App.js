@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import './index.css';
 
-function App() {
+const App = () => {
   const [temperature, setTemperature] = useState(10);
   const [bgColor, setBgColor] = useState('cold');
 
   const handleTempIncrease = () => {
     const newTemperature = temperature + 1;
     setTemperature(newTemperature);
-    if (temperature >= 15) {
+
+    if (newTemperature >= 15) {
       setBgColor('hot');
     }
   };
@@ -16,7 +17,7 @@ function App() {
   const handleTempDecrease = () => {
     const newTemperature = temperature - 1;
     setTemperature(newTemperature);
-    if (temperature < 15) {
+    if (newTemperature < 15) {
       setBgColor('cold');
     }
   };
@@ -32,6 +33,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
